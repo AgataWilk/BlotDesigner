@@ -1,0 +1,53 @@
+Dictionary tables:
+
+1. Users:
+    - user_id (primary key)
+    - user_login
+    - user_insitute
+    - password (encrypted)
+
+2. Protein:
+    - protein_id (primary key)
+    - protein_organism
+    - protein_sequence
+    - PDB_id
+    - PDB_link
+ 
+ 
+ 3. Primary_antibody
+    - pr_antib_id (primary key)
+    - pr_antib_organism
+    - pr_antib_target
+    - pr_antib_producer
+    - pr_antib_producer_site (link)
+    - pr_antib_binding_sequence
+    - pr_antib_type (polyclonal, monoclonal)
+    - pr_antib_recommended_concentration
+    
+    
+4. Secondary_antibody
+    - sec_antib_id (primary key)
+    - sec_antib_organism
+    - sec_antib_producer
+    - sec_antib_producer_site (link)
+    - sec_antib_type (polyclonal, monoclonal)
+    - sec_antib_recommended_concentration
+    
+     
+ Fact tables:
+ 
+ 1. Blot (available only for logged-in users, everyone can access only his own blot)
+    - blot_id (primary key - czy lepiej zrobić klucz złożony?)
+    - user_id (foreign key)
+    - date
+    - protein_id (foreign key)
+    - protein_amount
+    - pr_antib_id (foreign key)
+    - pr_antib_amount
+    - sec_antib_id (foreign key)
+    - sec_antib_amount
+    - marker (trzeba robić osobną tabelę na markery?)
+    - blot_scan (image)
+    
+  
+    
