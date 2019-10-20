@@ -10,8 +10,10 @@ Dictionary tables:
     - protein_id (primary key)
     - protein_organism
     - protein_sequence
+    - protein_mass
     - PDB_id
     - PDB_link
+    
  
  
  3. Primary_antibody
@@ -33,6 +35,15 @@ Dictionary tables:
     - sec_antib_type (polyclonal, monoclonal)
     - sec_antib_recommended_concentration
     
+5. Ladder
+    - ladder_id (primary key)
+    - ladder_name
+    - ladder_producer
+    - ladder_recommended_amount
+    - ladder_min_mass
+    - ladder_max_mass
+    - ladder_producer_link
+    
      
  Fact tables:
  
@@ -46,8 +57,11 @@ Dictionary tables:
     - pr_antib_amount
     - sec_antib_id (foreign key)
     - sec_antib_amount
-    - marker (trzeba robić osobną tabelę na markery?)
+    - ladder_id (foreign key)
+    - ladder_amount
+    - gel_concentration
     - blot_scan (image)
+    - user_comment
     
   
     
