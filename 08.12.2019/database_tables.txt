@@ -1,0 +1,72 @@
+﻿Dictionary tables:
+
+1. Users:
+    - user_id (primary key)
+    - user_insitute
+    - user_login
+    - password (encrypted)
+
+2. Protein:
+    - protein_uniprotkb
+    - protein_id (primary key) (foreign key to pa_specificity)
+    - protein_sequence
+    - protein_organism
+    - PDB_id
+    - PDB_length
+    - protein_mass
+    - PDB_link
+    - admin_id
+    
+ 
+ 
+ 3. Primary_antibody
+    - pa_id (primary key)
+    - pa_name (primary key)
+    - pa_host
+    - pa_specificity
+    - pa_producer
+    - pa_producer_site (link)
+    - pa_recommended_concentration
+    - pa_isotype
+    - pa_reactivity
+    
+    
+4. Secondary_antibody
+    - sa_id (primary key)
+    - sa_name
+    - sa_host
+    - sa_producer
+    - sa_producer_site (link)
+    - sa_recommended_concentration
+    - sa_reactivity
+    
+5. Ladder
+    - ladder_id (primary key)
+    - ladder_name
+    - ladder_producer
+    - ladder_producer_site
+    - ladder_recommended_amount
+    - ladder_min_mass
+    - ladder_max_mass
+    
+     
+ Fact tables:
+ 
+ 1. Blot (available only for logged-in users, everyone can access only his own blot)
+    - blot_id (primary key - czy lepiej zrobić klucz złożony?)
+    - user_id (foreign key)
+    - blot_date
+    - protein_id (foreign key)
+    - protein_amount
+    - pa_id (foreign key)
+    - pa_amount
+    - sa_id (foreign key)
+    - sa_amount
+    - ladder_id (foreign key)
+    - ladder_amount
+    - gel_concentration
+    - blot_scan (image)
+    - user_comment
+    
+  
+    
